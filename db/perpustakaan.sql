@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : localhost_3306
+ Source Server         : perpustakaan
  Source Server Type    : MySQL
- Source Server Version : 100422
+ Source Server Version : 100418
  Source Host           : localhost:3306
  Source Schema         : perpustakaan
 
  Target Server Type    : MySQL
- Target Server Version : 100422
+ Target Server Version : 100418
  File Encoding         : 65001
 
- Date: 21/06/2022 13:14:09
+ Date: 20/07/2022 00:04:32
 */
 
 SET NAMES utf8mb4;
@@ -27,15 +27,15 @@ CREATE TABLE `tb_buku`  (
   `tanggal_terbit` date NOT NULL,
   `pengarang` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`kode_buku`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tb_buku
 -- ----------------------------
-INSERT INTO `tb_buku` VALUES ('001', 'Kualitas I', '2016-01-09', 'asdasd ');
-INSERT INTO `tb_buku` VALUES ('002', 'Kualitas III', '2016-01-02', 'kd kjbaksdb kjabs');
 
 -- ----------------------------
+INSERT INTO `tb_buku` VALUES ('001', 'buku kode', '2019-11-15', 'Ahmad');
+INSERT INTO `tb_buku` VALUES ('002', 'kode satu', '2020-01-09', 'Mahmud');
 -- Table structure for tb_mahasiswa
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_mahasiswa`;
@@ -47,14 +47,14 @@ CREATE TABLE `tb_mahasiswa`  (
   `jurusan` varchar(25) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `tanggal_masuk` date NOT NULL,
   PRIMARY KEY (`no_bp`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tb_mahasiswa
 -- ----------------------------
-INSERT INTO `tb_mahasiswa` VALUES ('141400002', 'Sugi', 'Jepang', '1993-02-06', 'Sistem Informasi', '2016-01-02');
-INSERT INTO `tb_mahasiswa` VALUES ('141400009', 'Mia Bi', 'Jepang', '2016-01-16', 'Teknik Informasi', '2019-01-11');
-INSERT INTO `tb_mahasiswa` VALUES ('141400013', 'Joni ', 'Pantai Selatan', '1990-01-05', 'Sistem Informatika', '2016-01-02');
+INSERT INTO `tb_mahasiswa` VALUES ('2021021', 'May', 'Sintang', '2002-09-07', 'Teknik Informasi', '2020-05-22');
+INSERT INTO `tb_mahasiswa` VALUES ('2021023', 'Alim', 'Ketapang', '2002-10-16', 'Sistem Informasi', '2020-05-05');
+INSERT INTO `tb_mahasiswa` VALUES ('2021233', 'Jainal', 'Mempawah', '2002-05-28', 'Sistem Informatika', '2020-05-15');
 
 -- ----------------------------
 -- Table structure for tb_peminjaman
@@ -69,14 +69,13 @@ CREATE TABLE `tb_peminjaman`  (
   `tanggal_terbit` date NOT NULL,
   `tanggal_pinjam` date NOT NULL,
   PRIMARY KEY (`no_bp`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tb_peminjaman
 -- ----------------------------
-INSERT INTO `tb_peminjaman` VALUES ('12121212', 'Federick', 'Sistem Informasi', '003', 'Habis Terang Timbul Malam', '1945-04-22', '2022-06-21');
-INSERT INTO `tb_peminjaman` VALUES ('141400002', 'Sugi', 'Sistem Informasi', '002', 'Kualitas III', '2016-01-02', '2016-01-24');
-INSERT INTO `tb_peminjaman` VALUES ('141400009', 'Mia Bi', 'Teknik Informasi', '001', 'Kualitas I', '2016-01-09', '2016-01-22');
-INSERT INTO `tb_peminjaman` VALUES ('141400013', 'Joni ', 'Sistem Informatika', '002', 'Kualitas III', '2016-01-02', '2016-01-22');
+INSERT INTO `tb_peminjaman` VALUES ('2021021', 'May', 'Teknik Informasi', '001', 'buku kode', '2019-11-15', '2021-08-22');
+INSERT INTO `tb_peminjaman` VALUES ('2021023', 'Alim', 'Sistem Informasi', '003', 'saya kode', '2019-04-22', '2021-06-02');
+INSERT INTO `tb_peminjaman` VALUES ('2021233', 'Jainal', 'Sistem Informasi', '002', 'kode satu', '2020-01-09', '2021-07-05');
 
 SET FOREIGN_KEY_CHECKS = 1;

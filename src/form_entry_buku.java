@@ -156,7 +156,7 @@ public class form_entry_buku extends javax.swing.JDialog {
             }
         });
 
-        cmb_jenis.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Pilih-", "Kualitas I", "Kualitas II", "Kualitas III" }));
+        cmb_jenis.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Pilih-", "buku kode", "kode satu", "saya kode" }));
 
         t_tgl_terbit.setToolTipText("YYYY-MM-DD");
 
